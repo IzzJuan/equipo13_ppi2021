@@ -1,5 +1,4 @@
 <template>
-  <div>
     <nav class="navbar navbar-dark navbar-expand-lg">
       <router-link to="/" class="navbar-brand mb-0 h1">
         <img src="../assets/img/EcoTrips_logo/BackgroundEcoTrips_logo_V2.png" class="img-fluid" width="45px"
@@ -34,7 +33,6 @@
         </form>
       </div>
     </nav>
-  </div>
 </template>
 
 <script>
@@ -44,6 +42,7 @@ export default {
 </script>
 
 <style>
+
 div nav {
   background-color: rgb(0, 190, 201);
 }
