@@ -19,7 +19,7 @@ function buildBeans() {
     const UserRepositoryMongo = require('../repositories/UserRepositoryMongo');
     beans.userRepository = new UserRepositoryMongo();
   } else if (environment.database.dialect === constants.SUPPORTED_DATABASE.POSTGRES) {
-    throw new Error('Add PostgreSQL support');
+    // throw new Error('Add PostgreSQL support');
   } else {
     const UserRepositorySQLite= require('../repositories/UserRepositorySQLite');
     beans.userRepository = new UserRepositorySQLite();
