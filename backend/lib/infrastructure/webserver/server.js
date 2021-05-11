@@ -12,7 +12,7 @@ const createServer = async () => {
 
   // Create a server with a host and port
   const server = Hapi.server({
-    port: process.env.PORT || 3000
+    port: process.env.PORT || 8080
   });
 
   // Register vendors plugins
