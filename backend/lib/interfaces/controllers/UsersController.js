@@ -14,10 +14,10 @@ module.exports = {
     const serviceLocator = request.server.app.serviceLocator;
 
     // Input
-    const { firstName, lastName, email, password } = request.payload;
+    const { userFirstName, userLastName, userID, userEmail, userPassword } = request.payload;
 
     // Treatment
-    const user = await CreateUser(firstName, lastName, email, password, serviceLocator);
+    const user = await CreateUser(userFirstName, userLastName, userID, userEmail, userPassword, serviceLocator);
 
     // Output
     return serviceLocator.userSerializer.serialize(user);

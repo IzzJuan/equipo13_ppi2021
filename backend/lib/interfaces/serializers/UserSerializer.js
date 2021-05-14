@@ -3,9 +3,9 @@
 const _serializeSingleUser = (user) => {
   return {
     'id': user.id,
-    'first-name': user.firstName,
-    'last-name': user.lastName,
-    'email': user.email,
+    'userFirstName': user.userFirstName,
+    'userLastName': user.userLastName,
+    'userEmail': user.userEmail,
   };
 };
 

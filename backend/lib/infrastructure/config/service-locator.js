@@ -13,13 +13,12 @@ function buildBeans() {
   };
 
   if (environment.database.dialect === constants.SUPPORTED_DATABASE.IN_MEMORY) {
-    const UserRepositoryInMemory = require('../repositories/UserRepositoryInMemory');
-    beans.userRepository = new UserRepositoryInMemory();
+    throw new Error('Add In Memory support');
   } else if (environment.database.dialect === constants.SUPPORTED_DATABASE.MONGO) {
-    const UserRepositoryMongo = require('../repositories/UserRepositoryMongo');
-    beans.userRepository = new UserRepositoryMongo();
+    throw new Error('Add MongoDB support');
   } else if (environment.database.dialect === constants.SUPPORTED_DATABASE.POSTGRES) {
-    // throw new Error('Add PostgreSQL support');
+    const UserRepository = require('../repositories/UserRepository');
+    beans.userRepository = new UserRepository();
   } else {
     const UserRepositorySQLite= require('../repositories/UserRepositorySQLite');
     beans.userRepository = new UserRepositorySQLite();

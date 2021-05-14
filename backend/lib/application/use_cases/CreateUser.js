@@ -1,8 +1,10 @@
 'use strict';
 
 const User = require('../../domain/User');
+const { encryptPassword } = require('../utilities/bcrypt');
 
-module.exports = (firstName, lastName, email, password, { userRepository }) => {
-  const user = new User(null, firstName, lastName, email, password);
+module.exports = async (userFirstName, userLastName, userID, userEmail, userPassword, { userRepository }) => {
+  userPassword = await encryptPassword(userPassword);
+  const user = new User(null, userFirstName, userLastName, userID, userEmail, userPassword);
   return userRepository.persist(user);
 };

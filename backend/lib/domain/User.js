@@ -2,12 +2,13 @@
 
 module.exports = class {
 
-  constructor(id = null, firstName, lastName, email, password) {
-    this.id = id;
-    this.firstName = firstName;
-    this.lastName = lastName;
-    this.email = email;
-    this.password = password;
-  }
+    constructor(id = null, userFirstName, userLastName, userID, userEmail, userPassword) {
+        this.id = id;
+        this.userFirstName = userFirstName;
+        this.userLastName = userLastName;
+        this.userID = userID;
+        this.userEmail = userEmail;
+        this.userPassword = userPassword;
+    }
 
 };
