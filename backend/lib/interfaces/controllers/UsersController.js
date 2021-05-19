@@ -22,8 +22,8 @@ module.exports = {
       // Treatment
       const user = await SignInUser(userFirstName, userLastName, userID, userEmail, userPassword, serviceLocator);
 
-      // Output
-      return serviceLocator.userSerializer.serialize(user);
+      // Outputs
+      return h.response({ valid: true });
 
     } catch (e) {
       let message = "An internal server error occurred"
