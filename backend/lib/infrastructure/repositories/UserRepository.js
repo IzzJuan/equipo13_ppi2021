@@ -30,7 +30,7 @@ module.exports = class extends UserRepository {
         });
     }
 
-    async email(userEmail) {
+    async logIn(userEmail) {
 
         const user = await users.findOne({ attributes: ['userEmail', 'userPassword'], where: { userEmail } })
 
