@@ -22,8 +22,8 @@ module.exports = {
       // Treatment
       const user = await SignInUser(userFirstName, userLastName, userID, userEmail, userPassword, serviceLocator);
 
-      // Output
-      return serviceLocator.userSerializer.serialize(user);
+      // Outputs
+      return h.response({ valid: true });
 
     } catch (e) {
       let message = "An internal server error occurred"
@@ -49,15 +49,13 @@ module.exports = {
       const user = await LogInUser(userEmail, userPassword, serviceLocator);
 
       // Output
-      if (!user) {
-        return Boom.notFound('the email and password dont match');
-      }
+      if (!user) throw "EMAIL_AND_PASS_NOT_MATCH"
 
       return h.response({ valid: true });
     } catch (e) {
       let message = "An internal server error occurred"
-      if (e !== undefined && e === "EMAIL_NOT_FOUND") {
-        return Boom.notFound('Email not found');
+      if (e !== undefined && (e === "EMAIL_NOT_FOUND" || e === "EMAIL_AND_PASS_NOT_MATCH")) {
+        return h.response({ valid: false, msg: "Email and password not match" });
       } else {
         console.log(e);
       }
