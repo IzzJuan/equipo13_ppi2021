@@ -22,7 +22,7 @@
           />
         </div>
         <input type="submit" value="Login" @click.prevent="submit" />
-        <input type="button" value="Go to Signup" />
+        <input type="button" value="Go to Signup" @click="changeVisibility" />
       </div>
     </form>
   </div>
@@ -31,6 +31,9 @@
 import axios from "axios";
 import router from "@/router/index";
 export default {
+  props: {
+    method: { type: Function },
+  },
   data() {
     return {
       user: { userEmail: "", userPassword: "" },
@@ -38,11 +41,17 @@ export default {
   },
   methods: {
     submit() {
-      axios
-        .post("http://localhost:8081/login", this.user)
-        .then((res) =>
-          res.data.valid ? router.push("/") : alert(res.data.msg)
-        );
+      axios.post("http://localhost:8081/login", this.user).then((res) => {
+        if (res.data.valid) {
+          localStorage.setItem("userEmail", this.user.userEmail);
+          router.push("/");
+        } else {
+          alert(res.data.msg);
+        }
+      });
+    },
+    changeVisibility() {
+      this.method();
     },
   },
 };

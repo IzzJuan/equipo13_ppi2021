@@ -1,23 +1,34 @@
 <template lang="">
   <div class="auth">
-    <Login v-if="login" />
-    <Signin v-if="signin" />
+    <Login v-show="login" :method="changeVisibility" />
+    <Signin v-show="signin" :method="changeVisibility" />
   </div>
 </template>
 <script>
 import Login from "@/components/LoginForm";
 import Signin from "@/components/SigninForm";
-
+import router from "@/router/index";
 export default {
+  beforeCreate() {
+    if (localStorage.getItem("userEmail")) {
+      router.push("/");
+    }
+  },
   components: {
     Login,
     Signin,
   },
   data() {
     return {
-      login: false,
+      login: true,
       signin: false,
     };
+  },
+  methods: {
+    changeVisibility() {
+      this.login = !this.login;
+      this.signin = !this.signin;
+    },
   },
 };
 </script>

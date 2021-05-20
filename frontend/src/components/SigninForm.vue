@@ -44,7 +44,7 @@
           />
         </div>
         <input type="submit" value="Signup" @click.prevent="submit" />
-        <input type="button" value="Go to Login" />
+        <input type="button" value="Go to Login" @click="changeVisibility" />
       </div>
     </form>
   </div>
@@ -53,6 +53,9 @@
 import axios from "axios";
 import router from "@/router/index";
 export default {
+  props: {
+    method: { type: Function },
+  },
   data() {
     return {
       user: {
@@ -71,6 +74,9 @@ export default {
         .then((res) =>
           res.data.valid ? router.push("/") : alert(res.data.msg)
         );
+    },
+    changeVisibility() {
+      this.method();
     },
   },
 };
