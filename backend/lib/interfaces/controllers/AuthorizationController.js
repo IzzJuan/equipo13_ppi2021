@@ -12,17 +12,20 @@ module.exports = {
     const serviceLocator = request.server.app.serviceLocator;
 
     // Input
-    const grantType = request.payload['grant_type'];
-    const email = request.payload['username'];
-    const password = request.payload['password'];
 
-    if (!grantType || grantType !== 'password') {
-      return Boom.badRequest('Invalid authentication strategy');
-    }
+    const { userEmail } = request.payload;
+    // const grantType = request.payload['grant_type'];
+    // const email = request.payload['email'];
+    // const password = request.payload['password'];
+
+    // if (!grantType || grantType !== 'password') {
+    //   return Boom.badRequest('Invalid authentication strategy');
+    // }
 
     // Treatment
     try {
-      const accessToken = await GetAccessToken(email, password, serviceLocator);
+      // const accessToken = await GetAccessToken(email, password, serviceLocator);
+      const accessToken = await GetAccessToken(userEmail, serviceLocator);
 
       // Output
       return accessToken;

@@ -1,7 +1,7 @@
 <template lang="">
   <div class="auth">
-    <!-- <Login /> -->
-    <Signin />
+    <Login v-if="login" />
+    <Signin v-if="signin" />
   </div>
 </template>
 <script>
@@ -12,6 +12,12 @@ export default {
   components: {
     Login,
     Signin,
+  },
+  data() {
+    return {
+      login: false,
+      signin: false,
+    };
   },
 };
 </script>

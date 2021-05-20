@@ -55,6 +55,8 @@ const createServer = async () => {
     },
   ]);
 
+
+
   // Register custom plugins
   await server.register([
     require('./oauth'),

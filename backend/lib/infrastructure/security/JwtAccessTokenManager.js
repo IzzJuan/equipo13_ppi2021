@@ -9,7 +9,7 @@ const JWT_SECRET_KEY = 'shhhhhh!';
 module.exports = class extends AccessTokenManager {
 
   generate(payload) {
-    return jwt.sign(payload, JWT_SECRET_KEY);
+    return jwt.sign(payload, JWT_SECRET_KEY, { expiresIn: '1h' });
   }
 
   decode(accessToken) {

@@ -118,8 +118,15 @@ module.exports = class extends UserRepository {
 
 
     async getByEmail(userEmail) {
-        const seqUser = await this.model.findOne({ where: { email: userEmail } });
-        return new User(seqUser.id, seqUser.full_name, seqUser.last_name, seqUser.email, seqUser.pass, seqUser.register_time, seqUser.last_entry, seqUser.status, seqUser.admin, seqUser.parent_id, seqUser.upgrade_time);
+        const seqUser = await users.findOne({ where: { userEmail } });
+        return new User({
+            id: seqUser.id,
+            userFirstName: seqUser.userFirstName,
+            userLastName: seqUser.userLastName,
+            userID: seqUser.userID,
+            userEmail: seqUser.userEmail,
+            userPassword: seqUser.userPassword
+        });
     }
 
 };
