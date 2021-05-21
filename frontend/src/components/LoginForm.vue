@@ -1,14 +1,14 @@
 <template lang="">
   <div class="row">
     <form>
-      <div class="form-inner col">
+      <div class="form-inner col-md-auto">
         <h2>Login</h2>
         <div class="form-group">
           <label htmlFor="email">Email:</label>
           <input
             type="email"
             name="email"
-            id="email"
+            id="emailLogin"
             v-model="user.userEmail"
           />
         </div>
@@ -17,12 +17,18 @@
           <input
             type="password"
             name="password"
-            id="password"
+            id="passwordLogin"
             v-model="user.userPassword"
           />
         </div>
-        <input type="submit" value="Login" @click.prevent="submit" />
-        <input type="button" value="Go to Signup" @click="changeVisibility" />
+        <div class="row">
+          <div class="col botonIzq">
+            <input type="submit" value="Login" @click.prevent="submit" />
+          </div>
+          <div class="col botonDer">
+            <input type="button" value="Signup" @click="changeVisibility" />
+          </div>
+        </div>
       </div>
     </form>
   </div>

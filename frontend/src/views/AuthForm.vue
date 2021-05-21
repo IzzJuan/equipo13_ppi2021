@@ -1,5 +1,9 @@
 <template lang="">
-  <div class="auth">
+  <div class="auth row">
+    <img
+      src="../assets/img/EcoTrips_logo/TextoLogo2.png"
+      class="img-fluid mr-5 ml-5"
+    />
     <Login v-show="login" :method="changeVisibility" />
     <Signin v-show="signin" :method="changeVisibility" />
   </div>

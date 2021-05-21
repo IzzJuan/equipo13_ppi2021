@@ -2,6 +2,7 @@
   align-items: center;
   justify-content: center;
   margin: 0;
+  /* height: 100vh; */
 }
 
 input,
@@ -47,7 +48,7 @@ form .form-inner h2 {
 
 form .form-inner .form-group {
   display: block;
-  width: 300px;
+  width: 400px;
   margin-bottom: 15px;
 }
 
@@ -60,7 +61,7 @@ form .form-inner .form-group {
 }
 
 .form-inner .form-group:focus-within label {
-  color: #fe4880;
+  color: rgb(40, 216, 178);
 }
 
 form .form-inner .form-group input {
@@ -80,7 +81,12 @@ form .form-inner input[type="submit"] {
   display: inline;
   padding: 10px 15px;
   border-radius: 8px;
-  background-image: linear-gradient(to right, #e73c7e 25%, #ee7752);
+  background-image: linear-gradient(
+    to left,
+    rgb(40, 216, 178) 25%,
+    rgb(0, 190, 201)
+  );
+  width: 100px;
   background-size: 200%;
   background-position: 0%;
   transition: 0.4s;
@@ -97,16 +103,46 @@ form .form-inner input[type="button"] {
   display: inline;
   padding: 10px 15px;
   border-radius: 8px;
-  background-image: linear-gradient(to left, #e73c7e 25%, #ee7752);
+  background-image: linear-gradient(
+    to left,
+    rgb(40, 216, 178) 25%,
+    rgb(0, 190, 201)
+  );
+  width: 100px;
   background-size: 200%;
   background-position: 0%;
   transition: 0.4s;
   color: #fff;
   font-weight: 700;
   cursor: pointer;
-  margin-left: 32%;
+}
+
+.botonIzq {
+  text-align: left;
+  padding: 0;
+}
+
+.botonDer {
+  text-align: right;
+  padding: 0;
 }
 
 form .form-inner input[type="button"]:hover {
   background-position: 100% 0%;
+}
+
+@media (max-width: 500px) {
+  form .form-inner .form-group {
+    display: block;
+    width: 290px;
+    margin-bottom: 15px;
+  }
+}
+
+@media (max-width: 350px) {
+  form .form-inner .form-group {
+    display: block;
+    width: 200px;
+    margin-bottom: 15px;
+  }
 }
