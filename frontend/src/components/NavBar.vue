@@ -30,9 +30,7 @@
     <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
       <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
         <li class="nav-item d-flex">
-          <router-link to="/about">
-            <a class="nav-link" href="/about">Inicio</a>
-          </router-link>
+          <router-link to="/about" class="nav-link"> Inicio </router-link>
         </li>
         <li class="nav-item d-flex">
           <a class="nav-link" href="#">Reseñas</a>
@@ -64,7 +62,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 div nav {
   background-color: rgb(0, 190, 201);
 }

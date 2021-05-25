@@ -45,10 +45,10 @@
         </div>
         <div class="row">
           <div class="col botonIzq">
-            <input type="submit" value="Login" @click.prevent="submit" />
+            <input type="submit" value="Signup" @click.prevent="submit" />
           </div>
           <div class="col botonDer">
-            <input type="button" value="Signup" @click="changeVisibility" />
+            <input type="button" value="Login" @click="changeVisibility" />
           </div>
         </div>
       </div>
