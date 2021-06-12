@@ -1,15 +1,16 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-import Home from "../views/Home.vue";
+import Introduction from "../views/Introduction.vue";
 import AuthForm from "../views/AuthForm.vue";
+import Home from "../views/Home.vue";
 
 Vue.use(VueRouter);
 
 const routes = [
   {
     path: "/",
-    name: "Home",
-    component: Home,
+    name: "Introduction",
+    component: Introduction,
   },
   {
     path: "/about",
@@ -24,6 +25,11 @@ const routes = [
     path: "/auth",
     name: "AuthForms",
     component: AuthForm,
+  },
+  {
+    path: "/home",
+    name: "Home",
+    component: Home,
   },
 ];
 

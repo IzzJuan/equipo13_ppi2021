@@ -1,4 +1,3 @@
-const User = require('../../../domain/User');
 const { comparePassword } = require('../../utilities/bcrypt');
 
 module.exports = async (userEmail, userPassword, { userRepository }) => {

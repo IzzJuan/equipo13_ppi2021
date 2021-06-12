@@ -11,7 +11,7 @@ const LogInUser = require('../../application/use_cases/User/LoginInUser');
 module.exports = {
 
   async signInUser(request, h) {
-
+    console.log("estoy en el controller");
     // Context
     const serviceLocator = request.server.app.serviceLocator;
 
@@ -37,7 +37,7 @@ module.exports = {
   },
 
   async logInUser(request, h) {
-
+    console.log("estoy en el controller");
     // Context
     const serviceLocator = request.server.app.serviceLocator;
 

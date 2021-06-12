@@ -9,8 +9,8 @@
         alt="Ecotrips logo"
       />
       <img
-        src="../assets/img/EcoTrips_logo/TextoLogo2.png"
-        class="img-fluid mb-2"
+        src="../assets/img/EcoTrips_logo/TextoNegro.png"
+        class="img-fluid"
         width="100px"
         height="auto"
         alt="Ecotrips logo"
@@ -27,10 +27,32 @@
     >
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-      <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+    <div
+      class="collapse navbar-collapse justify-content-end"
+      id="navbarTogglerDemo02"
+    >
+      <ul class="navbar-nav">
         <li class="nav-item d-flex">
-          <router-link to="/about" class="nav-link"> Inicio </router-link>
+          <router-link to="/about" class="nav-link">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="icon icon-tabler icon-tabler-home-2"
+              width="30"
+              height="30"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="#000000"
+              fill="none"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+              <polyline points="5 12 3 12 12 3 21 12 19 12" />
+              <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+              <rect x="10" y="12" width="4" height="4" />
+            </svg>
+            Inicio
+          </router-link>
         </li>
         <li class="nav-item d-flex">
           <a class="nav-link" href="#">Reseñas</a>
@@ -42,16 +64,6 @@
           <a class="nav-link" href="#">Reservar</a>
         </li>
       </ul>
-      <form class="form-inline my-2 my-lg-0">
-        <input
-          class="form-control mr-sm-2"
-          type="search"
-          placeholder="Search"
-        />
-        <button class="btn btn-outline-light my-2 my-sm-0" type="submit">
-          Search
-        </button>
-      </form>
     </div>
   </nav>
 </template>
@@ -63,8 +75,8 @@ export default {
 </script>
 
 <style scoped>
-div nav {
-  background-color: rgb(0, 190, 201);
+.nav-link {
+  color: black !important;
 }
 
 form input,
