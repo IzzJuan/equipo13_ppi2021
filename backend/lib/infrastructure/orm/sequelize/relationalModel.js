@@ -1,8 +1,13 @@
-const sequelize = require('./sequelize');
+const sequelize = require("./sequelize");
 
-const users = sequelize.model('users')
+const users = sequelize.model("users");
 
+const hotels = sequelize.model("hotels");
+
+const cities = sequelize.model("cities");
 
 module.exports = {
-    users
-}
+  users,
+  hotels,
+  cities,
+};

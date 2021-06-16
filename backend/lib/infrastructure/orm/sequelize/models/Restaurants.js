@@ -7,11 +7,11 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: false,
       primaryKey: true
     },
-    idPlace: {
+    idCity: {
       type: DataTypes.INTEGER,
       allowNull: false,
       references: {
-        model: 'places',
+        model: 'cities',
         key: 'id'
       }
     },

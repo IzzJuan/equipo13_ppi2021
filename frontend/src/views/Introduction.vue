@@ -2,7 +2,7 @@
   <div>
     <main>
       <div class="row" style="overflow: hidden">
-        <div class="col pl-0">
+        <div class="col pl-0 pr-0">
           <img
             src="../assets/paisaje.png"
             class="img-fluid"
@@ -48,7 +48,7 @@
           </div>
         </div>
       </div>
-      <div class="row interestSection ml-4 mt-5" id="introduction">
+      <div class="row interestSection ml-4 pt-5" id="introduction">
         <div class="col">
           <p><span>Nuestro interés.</span></p>
           <p>

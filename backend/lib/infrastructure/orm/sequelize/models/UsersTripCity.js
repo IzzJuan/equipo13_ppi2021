@@ -1,11 +1,19 @@
 const Sequelize = require('sequelize');
 module.exports = function(sequelize, DataTypes) {
-  return sequelize.define('touristic_places', {
+  return sequelize.define('users_trip_city', {
     id: {
       autoIncrement: true,
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true
+    },
+    idUser: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      references: {
+        model: 'users',
+        key: 'id'
+      }
     },
     idCity: {
       type: DataTypes.INTEGER,
@@ -14,27 +22,15 @@ module.exports = function(sequelize, DataTypes) {
         model: 'cities',
         key: 'id'
       }
-    },
-    touristicPlaceName: {
-      type: DataTypes.STRING(100),
-      allowNull: true
-    },
-    touristicPlaceDesc: {
-      type: DataTypes.STRING(200),
-      allowNull: true
-    },
-    touristicPlacePhotos: {
-      type: DataTypes.JSON,
-      allowNull: true
     }
   }, {
     sequelize,
-    tableName: 'touristic_places',
+    tableName: 'users_trip_city',
     schema: 'public',
     timestamps: false,
     indexes: [
       {
-        name: "touristic_places_pkey",
+        name: "users_trip_city_pkey",
         unique: true,
         fields: [
           { name: "id" },

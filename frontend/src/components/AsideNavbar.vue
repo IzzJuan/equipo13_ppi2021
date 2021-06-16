@@ -9,7 +9,7 @@
       <a href="#">Clients</a>
       <a href="#">Contact</a>
     </div>
-    <button type="button" class="btn btn-outline-info" @click="openNav()">
+    <button type="button" class="btn btn-outline-dark" @click="openNav()">
       &#9776;
     </button>
   </div>
@@ -77,7 +77,6 @@ body {
 button {
   margin-top: 1vw;
   margin-left: 1vw;
-  padding: 0.3vw 0.5vw;
 }
 
 @media screen and (max-height: 450px) {

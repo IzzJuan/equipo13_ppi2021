@@ -16,12 +16,13 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: false
     },
     userID: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING(50),
       allowNull: false
     },
     userEmail: {
       type: DataTypes.STRING(60),
-      allowNull: false
+      allowNull: false,
+      unique: "users_userEmail_key"
     },
     userPassword: {
       type: DataTypes.STRING(150),
@@ -38,6 +39,13 @@ module.exports = function(sequelize, DataTypes) {
         unique: true,
         fields: [
           { name: "id" },
+        ]
+      },
+      {
+        name: "users_userEmail_key",
+        unique: true,
+        fields: [
+          { name: "userEmail" },
         ]
       },
     ]
